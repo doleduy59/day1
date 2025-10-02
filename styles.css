@@ -28,15 +28,25 @@ body {
 }
 
 .logo_container {
-    flex: 0.5;
+    flex: 1;
 }
 
 .nav-links {
-    flex: 0.5;
+    flex: 1;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media(max-width: 1480px) {
+    .logo_container {
+        flex: 1;
+    }
+
+    .nav-links {
+        flex: 2;
+    }
 }
 
 .nav-links a {
@@ -183,8 +193,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
+
+
 
 .story .slogan {
     display: flex;
@@ -205,7 +216,7 @@ main {
     color: #2081ff;
     font-weight: 500;
     box-sizing: border-box;
-    padding-left: 5%;
+    text-align: center;
 }
 
 .story .slogan .bot {
@@ -722,10 +733,16 @@ main {
     padding: 20px;
 }
 
+.success-stories .list .content svg {
+    position: absolute;
+    top: 12%;
+}
+
 .success-stories .list .content h1 {
+    position: absolute;
+    top: 34%;
     font-size: 24px;
     margin: 0;
-    margin-top: 20px;
     text-align: center;
     color: white;
     font-weight: 400;
@@ -733,12 +750,14 @@ main {
 
 
 .success-stories .list .content p {
+    position: absolute;
+    top: 42%;
     font-size: 16px;
     text-align: center;
     line-height: 26px;
     font-weight: 100;
     color: white;
-
+    padding: 0px 20px;
 }
 
 .success-stories .list .mini-box {
@@ -761,6 +780,8 @@ main {
     margin-bottom: 70px;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0% 12.5%;
 }
 
 .journey h1 {
@@ -784,7 +805,7 @@ main {
 }
 
 .years-container {
-    width: 74.1%;
+    width: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -1076,7 +1097,6 @@ main {
 
 .stats .content h1 {
     box-sizing: border-box;
-
     font-size: 40px;
     color: white;
     margin: 0;
@@ -1088,7 +1108,7 @@ main {
 
 .stats .content .list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
     grid-template-rows: repeat(3, 1fr);
     gap: 67px 0px;
 }
@@ -1119,11 +1139,30 @@ main {
 
 /*main award*/
 .award {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
     padding: 80px 12.5%;
 }
 
+.award h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.award p {
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 16px;
+    max-width: 453px;
+    text-align: center;
+}
+
 .award .list {
+    width: 100%;
     height: 180px;
     display: flex;
     justify-content: space-between;
@@ -1293,6 +1332,7 @@ main {
 
 .daily1 .images {
     width: 100%;
+    height: 360px;
     margin: 0;
     margin-top: 50px;
     box-sizing: border-box;
@@ -1302,9 +1342,15 @@ main {
     gap: 1rem;
 }
 
-.daily1 img {
-    height: 360;
+.daily1 .images div {
     flex-grow: 1;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+.daily1 .images img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -1314,9 +1360,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    padding-left: 12.5%;
-    padding-right: 12.5%;
 }
 
 .daily2 h1 {
@@ -1328,17 +1371,16 @@ main {
 }
 
 .daily2 .images {
-    width: 100%;
+    height: 657px;
+    width: 1200px;
     margin: 0;
     margin-top: 50px;
-    box-sizing: border-box;
-    padding-left: 1rem;
-    padding-right: 1rem;
     display: flex;
     gap: 1rem;
 }
 
 .tall {
+
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -1359,7 +1401,6 @@ main {
 
 .daily2 .tall img {
     height: 321;
-    flex-grow: 1;
     object-fit: cover;
 }
 
@@ -1500,11 +1541,12 @@ footer {
 }
 
 footer .content {
+    margin: 80px 0 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 80px 12.5% 0px;
+    padding: 0 12.5% 0px;
 
 }
 
@@ -1630,10 +1672,9 @@ footer .app {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin: 0;
-    margin-top: 50px;
+    margin: 50px 0;
     box-sizing: border-box;
-    padding: 0px 12.5% 50px;
+    padding: 0px 12.5%;
 }
 
 footer .app a {
@@ -1676,4 +1717,31 @@ footer .footer .links {
     height: 100%;
     justify-content: start;
     align-items: center;
+}
+
+
+@media (max-width: 1480px) {
+
+    .hero .content,
+    .story,
+    .vision-mission,
+    .core-values,
+    .journey,
+    .award,
+    .key-members,
+    footer .content,
+    footer .app,
+    footer .bot-content,
+    footer .line,
+    .contact {
+        padding: 0% 4%;
+    }
+
+    .daily2 .images,
+    .daily2 .images .container,
+    .daily2 .short,
+    .daily2 .tall {
+        gap: 0.5rem;
+    }
+
 }
