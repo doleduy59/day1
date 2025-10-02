@@ -690,6 +690,8 @@ main {
     position: relative;
 }
 
+@media (max-width: 14) {}
+
 .success-stories .list .item1,
 .success-stories .list .item3,
 .success-stories .list .item5 {
