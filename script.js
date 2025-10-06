@@ -1,3 +1,5 @@
+const screenWidth = window.innerWidth;
+
 /*navbar*/
 let btnBar = document.getElementById('btnBar')
 let btnCloseBar = document.getElementById('btnCloseBar')
@@ -19,15 +21,20 @@ const toggleContent = (element, open) => {
     if (open) {
         element.style.height = 'auto';
         const contentHeight = element.scrollHeight;
-        element.style.height = '0%';
+        element.style.height = '0px';
         setTimeout(() => {
             element.style.height = `${contentHeight}px`;
+            element.style.paddingBottom = 'calc(100vw/390*12)'
         }, 5);
         element.style.opacity = '1';
     }
     else {
-        element.style.height = `0px`;
-        element.style.opacity = '0';
+        setTimeout(() => {
+            element.style.height = `0px`;
+            element.style.opacity = '0';
+            element.style.paddingBottom = '0px'
+        }, 5);
+
     }
 
 }

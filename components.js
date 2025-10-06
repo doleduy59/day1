@@ -4,8 +4,6 @@ const loadCompoment = (elementId, idPath) => {
     }).then(toHTML => {
         document.getElementById(elementId).innerHTML = toHTML
     }).catch(err => {
-        console.log(`lỗi tải html tai ${isPath}`)
+        console.log(`lỗi tải html tai ${idPath}`)
     })
 }
-
-loadCompoment('desktop', 'desktop.html')
