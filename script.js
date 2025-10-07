@@ -220,3 +220,10 @@ btnFootLinks5.addEventListener('click', () => {
     }
     checkFootLinks5()
 })
+
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+    },
+});
