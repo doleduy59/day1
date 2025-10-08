@@ -224,6 +224,12 @@ btnFootLinks5.addEventListener('click', () => {
 var swiper = new Swiper(".mySwiper", {
     pagination: {
         el: ".swiper-pagination",
+
+    },
+});
+var swiperDynamic = new Swiper(".mySwiperDynamic", {
+    pagination: {
+        el: ".swiper-pagination",
         dynamicBullets: true,
     },
 });
